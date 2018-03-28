@@ -7,7 +7,7 @@ module.exports = function (context,cb) {
    const bEmail = context.body.email;
   const result = posthtml()
     .use(require('posthtml-custom-elements')())
-    .process(html, { sync: true })
+    .process(bEmail, { sync: true })
     .html;
   
     cb(null, {result});
