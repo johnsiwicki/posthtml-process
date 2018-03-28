@@ -6,8 +6,7 @@ module.exports = function (context,cb) {
   
    const bEmail = context.body.email;
    const result = posthtml()
-    .use(customelements)
-    .use(collectInlineStyles)
+    .use(collectInlineStyles, customelements)
     .process(bEmail, { sync: true })
     .html
   
