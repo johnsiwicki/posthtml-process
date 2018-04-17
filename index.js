@@ -10,9 +10,6 @@ module.exports = function (context,cb) {
   
   const bEmail = context.body.email;
   const result = posthtml(
-      [
-        require('posthtml-custom-elements')()
-      ],
       
       [ postcss(postcssPlugins, postcssOptions, filterType) ]
       )
