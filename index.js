@@ -7,8 +7,8 @@ module.exports = function (context,cb) {
   const bEmail = context.body.email;
   const result = posthtml(
       [
-        //require('posthtml-custom-elements')(),
-        require('posthtml-classes')()
+        require('posthtml-custom-elements')(),
+       // require('posthtml-classes')()
       ])
     .process(bEmail, { sync: false })
     .html;
