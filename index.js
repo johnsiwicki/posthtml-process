@@ -12,7 +12,7 @@ module.exports = function (context,cb) {
   const result = posthtml(
       [
         require('posthtml-custom-elements')()
-      ]
+      ],
       
       [ postcss(postcssPlugins, postcssOptions, filterType) ]
       )
