@@ -2,7 +2,7 @@ const posthtml = require('posthtml');
  
 const postPlugins = [
   require('posthtml-custom-elements')()
-]
+];
  
 
 module.exports = function (context,cb) {
