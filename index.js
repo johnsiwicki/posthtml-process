@@ -8,7 +8,7 @@ module.exports = function (context,cb) {
   const result = posthtml(
       [
         require('posthtml-custom-elements')(),
-        require('posthtml-collect-inline-styles')()
+        require('posthtml-classes')()
       ])
     .process(bEmail, { sync: false })
     .html;
