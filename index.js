@@ -3,8 +3,7 @@ const posthtml = require('posthtml');
 const postPlugins = [
   require('posthtml-custom-elements')()
 ]
-const postcssOptions = {};
-const filterType = /^text\/css$/;
+ 
 
 module.exports = function (context,cb) {
   
