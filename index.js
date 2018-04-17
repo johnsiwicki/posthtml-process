@@ -1,7 +1,7 @@
 const posthtml = require('posthtml');
-const postcss = require('posthtml-postcss');
-const postcssPlugins = [
-  require('autoprefixer')({ browsers: ['last 2 versions'] })
+ 
+const postPlugins = [
+  require('posthtml-custom-elements')()
 ]
 const postcssOptions = {};
 const filterType = /^text\/css$/;
@@ -10,8 +10,9 @@ module.exports = function (context,cb) {
   
   const bEmail = context.body.email;
   const result = posthtml(
-      
-      [ postcss(postcssPlugins, postcssOptions, filterType) ]
+      [
+        postPlugins
+      ] 
       )
     .process(bEmail, { sync: true })
     .html;
