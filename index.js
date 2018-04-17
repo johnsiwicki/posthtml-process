@@ -4,9 +4,9 @@ var collectInlineStyles  = require('posthtml-collect-inline-styles');
 
 module.exports = function (context,cb) {
   
-   const bEmail = context.body.email;
+  const bEmail = context.body.email;
   const result = posthtml()
-    .use(require('posthtml-custom-elements')())
+    .use(require('posthtml-custom-elements')(), require('posthtml-collect-inline-styles')())
     .process(bEmail, { sync: true })
     .html;
   
