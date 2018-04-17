@@ -8,9 +8,9 @@ module.exports = function (context,cb) {
   const result = posthtml(
       [
         require('posthtml-custom-elements')(),
-       // require('posthtml-classes')()
+        require('posthtml-classes')()
       ])
-    .process(bEmail, { sync: false })
+    .process(bEmail, { sync: true })
     .html;
   
     cb(null, {result});
