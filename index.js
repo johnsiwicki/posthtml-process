@@ -1,8 +1,7 @@
 const posthtml = require('posthtml');
 
 const postPlugins = [
-  require('posthtml-custom-elements')(),
-  require('posthtml-minifier')({ removeComments: true } )
+  require('posthtml-custom-elements')() 
 ];
  
 
