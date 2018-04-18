@@ -1,16 +1,16 @@
 const posthtml = require('posthtml');
 
 const postPlugins = [
-  require('posthtml-custom-elements')() 
+  require('posthtml-custom-elements')(),
+  require('posthtml-minifier')()
 ];
  
 
 module.exports = function (context,cb) {
   
   const bEmail = context.body.email;
-  const result = posthtml(
-      [postPlugins] 
-      )
+  const result = posthtml()
+     .use(postPlugins)
     .process(bEmail, { sync: true })
     .html;
     
