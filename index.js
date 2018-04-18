@@ -7,7 +7,7 @@ module.exports = function (context,cb) {
         posthtml([
       		require('posthtml-custom-elements')(),
           require('posthtml-minifier')()
-      	]).process(bEmail, { sync: false })
+      	]).process(bEmail, { sync: true })
           .html;
     
     cb(null, {result});
