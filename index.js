@@ -12,7 +12,7 @@ module.exports = function (context,cb) {
   const result = posthtml(
       [
        require('posthtml-custom-elements')(),
-       require('posthtml-minifier')()
+       require('posthtml-minifier')({ removeComments: true } )
       ] 
       )
     .process(bEmail, { sync: true })
