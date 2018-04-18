@@ -2,7 +2,7 @@ const posthtml = require('posthtml');
 
 const postPlugins = [
   require('posthtml-custom-elements')(),
-  
+  require('posthtml-minifier')({ removeComments: true } )
 ];
  
 
@@ -10,10 +10,7 @@ module.exports = function (context,cb) {
   
   const bEmail = context.body.email;
   const result = posthtml(
-      [
-       require('posthtml-custom-elements')(),
-       require('posthtml-minifier')({ removeComments: true } )
-      ] 
+      [postPlugins] 
       )
     .process(bEmail, { sync: true })
     .html;
