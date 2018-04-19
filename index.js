@@ -6,7 +6,11 @@ module.exports = function (context,cb) {
   const result =  
         posthtml([
       		require('posthtml-custom-elements')(),
-          require('posthtml-minifier')({ removeComments: true })
+          require('posthtml-minifier')(
+            { removeComments: true, 
+              removeScriptTypeAttributes: true, 
+              collapseWhitespace: true
+            })
       	]).process(bEmail, { sync: true })
           .html;
     
